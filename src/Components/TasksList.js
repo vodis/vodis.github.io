@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 
-class AddTask extends React.Component {
+class TasksList extends React.Component {
+    handleChangeItems(items) {
+        for (let i = 0; i<items.length; i++) {
+            return (
+                <div>
+                    <p key={i}>{items[i]}</p>
+                </div>
+            );
+        }
+    }
+
     render() {
+        const items = this.props.items;
         return (
             <div>
-                <form>
-                    <h1>Items</h1>
-                    <input/>
-                    <button>Add</button>
-                </form>
+                <p>{items}</p>
             </div>
         );
     }
 }
 
-export default AddTask;
+export default TasksList;
