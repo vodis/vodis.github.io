@@ -31,6 +31,7 @@ class TasksForm extends React.Component {
     echoTask(item) {
         return (
             <Tasks value={item}/>
+
         );
     }
 
