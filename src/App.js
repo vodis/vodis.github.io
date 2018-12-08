@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TaskForm from './Components/TaskForm';
-import TasksList from './Components/TasksList';
+import Tasks from './Components/Tasks';
 
 class App extends Component {
   render() {
@@ -22,8 +21,7 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <TaskForm/>
-        <TasksList/>
+        <Tasks/>
       </div>
     );
   }
