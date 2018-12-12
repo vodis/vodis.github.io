@@ -101,6 +101,7 @@ class CommentsList extends React.Component {
         }
     }
 
+
     render() {
         if (!!this.props.onStage) {
             return (
