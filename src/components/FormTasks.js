@@ -24,7 +24,7 @@ class FormTasks extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="col-10 page-content">
                 <h2>Items</h2>
                 <form onSubmit={this.handleSubmit}>
                     <input
@@ -32,7 +32,7 @@ class FormTasks extends React.Component {
                         placeholder="Type name here..."
                         ref="input"
                     />
-                    <button type="summit">Add</button>
+                    <button type="summit">Add new</button>
                 </form>
                 <TasksList value={this.state.value} index={this.state.index} />
             </div>

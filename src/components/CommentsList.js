@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Comment from './Comment';
+import CommentAvatar from './CommentAvatar';
 
 class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            taskId: this.props.taskId,
             keys: [],
             value: '',
             newComment: []
@@ -21,13 +22,14 @@ class Form extends React.Component {
         });
 
         if (accepter.find(key => key == 13) && accepter.find(key => key == 17)) {
-            console.log("accepter");
+            const comments = this.state.value;
+            this.props.getState(this, this.state.value);
             this.setState({
-                newComment: this.state.newComment.concat(this.state.value),
+                newComment: comments,
                 value: ''
             });
+            console.log("CommentsList_componentWillUpdate_find props of comments", this.state.newComment);
         }
-        console.log(this.state.newComment);
     }
 
     componentDidMount() {
@@ -60,9 +62,9 @@ class Form extends React.Component {
     }
 
     render() {
+
         return (
             <div>
-                <Comment newComment={this.state.newComment} />
                 <form>
                     <textarea
                         type="text"
@@ -83,6 +85,11 @@ class CommentsList extends React.Component {
     constructor(props){
         super(props);
         this.eachComent = this.eachComent.bind(this);
+        this.receiveState = this.receiveState.bind(this);
+    }
+
+    receiveState(e) {
+        this.props.setArrayOfComments(e.state.value, e.state.taskId);
     }
 
     eachComent(task) {
@@ -92,8 +99,15 @@ class CommentsList extends React.Component {
                     <h2>{task.task}</h2>
                     <div className="comments-wrapper">
                         <div className="comment">
-                            {task.comments}
-                            <Form/>
+                            {task.comments.map((comment, key) => {
+                                return (
+                                    <div key={key}>
+                                        {comment}
+                                        <CommentAvatar comment={comment} identifier={key}/>
+                                    </div>
+                                );
+                            })}
+                            <Form taskId={task.id} getState={this.receiveState}/>
                         </div>
                     </div>
                 </div>

@@ -4,27 +4,23 @@ import './App.css';
 import FormTasks from './components/FormTasks';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <FormTasks/>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="row h-100 w-100">
+                <div className="col-2">
+                    <header>
+                        <div className="wrapper">
+                            <div className="content">
+                                <h1 className="title">dairy app</h1>
+                                <p className="subtitle"> Comment with no sense </p>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <FormTasks/>
+            </div>
+        );
+    }
 }
 
 export default App;
