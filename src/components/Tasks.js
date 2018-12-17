@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Tasks extends React.Component {
     constructor(props){
@@ -16,7 +16,7 @@ class Tasks extends React.Component {
 
     eachTasks(task) {
         return (
-            <div className="item" key={task.id} onClick={this.openListComments.bind(this, task.id)} >
+            <div key={task.id} onClick={this.openListComments.bind(this, task.id)} >
                 <p>{task.task}</p>
                 <span>{task.comments.length}</span>
                 <button ref={task.id} onClick={this.onDeleteTask.bind(this, task.id)}>Delete</button>

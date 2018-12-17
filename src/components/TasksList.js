@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Tasks from './Tasks';
 import CommentsList from './CommentsList';
+import FormTasks from "./FormTasks";
 
 class TasksList extends React.Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class TasksList extends React.Component {
         this.handleDeleteTask = this.handleDeleteTask.bind(this);
         this.handleSetComments = this.handleSetComments.bind(this);
         this.findCurrentComment = this.findCurrentComment.bind(this);
+        this.setValueByNewFormTasks = this.setValueByNewFormTasks.bind(this);
     }
 
     componentWillMount() {
@@ -47,37 +49,6 @@ class TasksList extends React.Component {
     componentWillUpdate(nextProps, nextState) {
         console.log("TasksList_componentWillUpdate: Place for update and save data to localstore", nextProps, this.state.tasks);
         localStorage.setItem('tasks', JSON.stringify(nextState.tasks));
-    }
-
-    componentDidUpdate(prevProps) {
-        if (this.props.index !== prevProps.index) {
-            this.setState({
-                value: this.props.value
-            });
-            this.setListTasks(this.props.value, this.state.index);
-        }
-    }
-
-    setListTasks(value, index) {
-        let task = value;
-        var arrId = [];
-
-        this.state.tasks.map(task => {
-            if (task.id == undefined || task.id == null) {
-                arrId.push(0)
-            } else {
-                arrId.push(task.id);
-            }
-        });
-
-        var id = arrId.length === 0 ? 0 : Math.max(...arrId) + 1;
-
-        let comments = [];
-        this.setState({
-            index: id,
-            tasks: this.state.tasks.concat({task, id, comments})
-            //By CommentsList: const comments = this.state.newComment.concat(this.state.value);
-        });
     }
 
     handleDeleteTask(i) {
@@ -119,23 +90,52 @@ class TasksList extends React.Component {
         });
     }
 
+    setValueByNewFormTasks(value) {
+        this.setListTasks(value);
+    }
+
+    setListTasks(value) {
+        let task = value;
+        var arrId = [];
+
+        this.state.tasks.map(task => {
+            if (task.id == undefined || task.id == null) {
+                arrId.push(0)
+            } else {
+                arrId.push(task.id);
+            }
+        });
+
+        var id = arrId.length === 0 ? 0 : Math.max(...arrId) + 1;
+
+        let comments = [];
+        this.setState({
+            index: id,
+            tasks: this.state.tasks.concat({task, id, comments})
+        });
+    }
+
     render() {
         const tasks = this.state.tasks;
-        console.log("TasksList", this.state.tasks);
 
         return (
-            <div>
-                <Tasks
-                    tasks={tasks}
-                    deleteTask={this.handleDeleteTask}
-                    listComments={this.findCurrentComment}
-                />
-                <CommentsList
-                    tasks={tasks}
-                    currentComment={this.state.currentIdComment}
-                    onStage={this.state.stage}
-                    setArrayOfComments={this.handleSetComments}
-                />
+            <div className="row col-10">
+                <div className="col-6">
+                    <FormTasks getValue={this.setValueByNewFormTasks}/>
+                    <Tasks
+                        tasks={tasks}
+                        deleteTask={this.handleDeleteTask}
+                        listComments={this.findCurrentComment}
+                    />
+                </div>
+                <div className="col-6">
+                    <CommentsList
+                        tasks={tasks}
+                        currentComment={this.state.currentIdComment}
+                        onStage={this.state.stage}
+                        setArrayOfComments={this.handleSetComments}
+                    />
+                </div>
             </div>
         );
     }

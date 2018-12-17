@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CommentAvatar from './CommentAvatar';
 
 class Form extends React.Component {
@@ -21,7 +21,7 @@ class Form extends React.Component {
             accepter.push(key)
         });
 
-        if (accepter.find(key => key == 13) && accepter.find(key => key == 17)) {
+        if (accepter.find(key => key === 13) && accepter.find(key => key === 17)) {
             const comments = this.state.value;
             this.props.getState(this, this.state.value);
             this.setState({
