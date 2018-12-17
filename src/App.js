@@ -9,7 +9,6 @@ class App extends Component {
         return (
             <div className="panels row h-100 w-100">
                 <Panal/>
-                {/*<FormTasks/>*/}
                 <TasksList/>
             </div>
         );

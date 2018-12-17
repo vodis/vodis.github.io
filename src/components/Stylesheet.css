@@ -1,0 +1,98 @@
+.content {
+    padding: 30px 15px 30px 20px;
+    box-shadow: 0 0 10px 0 #949494;
+    max-height: 95vh;
+    overflow-y: scroll;
+}
+
+.page-content {
+    padding: 30px 20px 0 30px;
+}
+
+.added-btn {
+    height: 37px;
+    background-color: #27CCC0;
+    width: 100%;
+}
+
+.item {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F2F2F2;
+    cursor: pointer;
+}
+
+.item-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+    float: left;
+}
+
+.point {
+    width: 39px;
+    height: 20px;
+    background-color: #27CCC0;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 40px;
+    padding: 3px 10px;
+    border-radius: 10%;
+}
+
+.delete-btn {
+    width: 97px;
+    height: 34px;
+    border: 2px solid #FF3159;
+    color: #FF3159;
+    background-color: #fff;
+    border-radius: 5px;
+    float: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.textarea {
+    height: 70px;
+    width: 100%;
+    resize: none;
+    border: 2px solid #CCCCCC;
+}
+.avatar {
+    width: 52px;
+    height: 52px;
+    margin: 5px auto 0 auto;
+}
+
+.avatar-props-0 {
+    background-color: #E6E6E6;
+}
+
+.avatar-props-1 {
+    background-color: #FF8A00;
+}
+
+.avatar-props-2 {
+    background-color: #47568C;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.comment {
+    padding-top: 32px;
+}
+
+.comment-container {
+    border-bottom: 1px solid #F2F2F2;
+    margin-top: 13px;
+}
+
+.new-comment-container {
+    margin-top: 13px;
+}

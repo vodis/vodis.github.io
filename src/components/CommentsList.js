@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentAvatar from './CommentAvatar';
+import './Stylesheet.css';
 
 class Form extends React.Component {
     constructor(props) {
@@ -64,16 +65,23 @@ class Form extends React.Component {
     render() {
 
         return (
-            <div>
-                <form>
-                    <textarea
-                        type="text"
-                        onKeyDown={this.handleSubmitKeybord}
-                        ref="value"
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                    />
-                </form>
+            <div className="new-comment-container">
+                <div className="row">
+                    <div className="col-1 avatar avatar-props-0">
+                    </div>
+                    <div className="col-11">
+                        <form>
+                            <textarea
+                                type="text"
+                                onKeyDown={this.handleSubmitKeybord}
+                                ref="value"
+                                value={this.state.value}
+                                onChange={this.handleChange}
+                                className="textarea"
+                            />
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -95,19 +103,27 @@ class CommentsList extends React.Component {
     eachComent(task) {
         if (task.id === this.props.currentComment) {
             return (
-                <div key={task.id}>
-                    <h2>{task.task}</h2>
-                    <div className="comments-wrapper">
-                        <div className="comment">
-                            {task.comments.map((comment, key) => {
-                                return (
-                                    <div key={key}>
-                                        {comment}
-                                        <CommentAvatar comment={comment} identifier={key}/>
-                                    </div>
-                                );
-                            })}
-                            <Form taskId={task.id} getState={this.receiveState}/>
+                <div key={task.id} className="content">
+                    <div className="container">
+                        <h2>{task.task}</h2>
+                        <div className="comments-wrapper">
+                            <div>
+                                <div className="comment">
+                                    {task.comments.map((comment, key) => {
+                                        return (
+                                            <div key={key} className="comment-container">
+                                                <div className="row">
+                                                    <CommentAvatar comment={comment} identifier={key}/>
+                                                    <div className="col-11">
+                                                        <p className="text">{comment}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                                <Form taskId={task.id} getState={this.receiveState}/>
+                            </div>
                         </div>
                     </div>
                 </div>

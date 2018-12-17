@@ -1,4 +1,5 @@
 import React from 'react';
+import './Stylesheet.css';
 
 class Tasks extends React.Component {
     constructor(props){
@@ -16,10 +17,10 @@ class Tasks extends React.Component {
 
     eachTasks(task) {
         return (
-            <div key={task.id} onClick={this.openListComments.bind(this, task.id)} >
-                <p>{task.task}</p>
-                <span>{task.comments.length}</span>
-                <button ref={task.id} onClick={this.onDeleteTask.bind(this, task.id)}>Delete</button>
+            <div key={task.id} onClick={this.openListComments.bind(this, task.id)} className="item">
+                <p className="item-name">{task.task}</p>
+                <span className="point">{task.comments.length}</span>
+                <button ref={task.id} onClick={this.onDeleteTask.bind(this, task.id)} className="delete-btn">Delete</button>
             </div>
         );
     }

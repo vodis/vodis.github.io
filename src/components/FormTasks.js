@@ -1,4 +1,5 @@
 import React from 'react';
+import './Stylesheet.css';
 
 class FormTasks extends React.Component {
     constructor(props) {
@@ -18,15 +19,24 @@ class FormTasks extends React.Component {
     render() {
         return (
             <div>
-                <h2>Items</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        placeholder="Type name here..."
-                        ref="input"
-                    />
-                    <button type="summit">Add new</button>
-                </form>
+                <div className="form-group">
+                    <h2>Items</h2>
+                    <form onSubmit={this.handleSubmit} className="form ng-valid ng-dirty ng-touched">
+                        <div className="row add-wrapper">
+                            <div className="col-9">
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    placeholder="Type name here..."
+                                    ref="input"
+                                />
+                            </div>
+                            <div className="col-3">
+                                <button type="summit" className="btn btn-info added-btn">Add new</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

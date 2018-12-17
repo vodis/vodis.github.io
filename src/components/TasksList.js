@@ -2,6 +2,7 @@ import React from 'react';
 import Tasks from './Tasks';
 import CommentsList from './CommentsList';
 import FormTasks from "./FormTasks";
+import './Stylesheet.css';
 
 class TasksList extends React.Component {
     constructor(props) {
@@ -119,22 +120,24 @@ class TasksList extends React.Component {
         const tasks = this.state.tasks;
 
         return (
-            <div className="row col-10">
+            <div className="row col-10 page-content">
                 <div className="col-6">
-                    <FormTasks getValue={this.setValueByNewFormTasks}/>
-                    <Tasks
-                        tasks={tasks}
-                        deleteTask={this.handleDeleteTask}
-                        listComments={this.findCurrentComment}
-                    />
+                    <div className="content">
+                        <FormTasks getValue={this.setValueByNewFormTasks}/>
+                        <Tasks
+                            tasks={tasks}
+                            deleteTask={this.handleDeleteTask}
+                            listComments={this.findCurrentComment}
+                        />
+                    </div>
                 </div>
                 <div className="col-6">
-                    <CommentsList
-                        tasks={tasks}
-                        currentComment={this.state.currentIdComment}
-                        onStage={this.state.stage}
-                        setArrayOfComments={this.handleSetComments}
-                    />
+                        <CommentsList
+                            tasks={tasks}
+                            currentComment={this.state.currentIdComment}
+                            onStage={this.state.stage}
+                            setArrayOfComments={this.handleSetComments}
+                        />
                 </div>
             </div>
         );
