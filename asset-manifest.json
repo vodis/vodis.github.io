@@ -1,13 +1,13 @@
 {
-  "main.css": "/vodis.github.io/static/css/main.888fa1fa.chunk.css",
-  "main.js": "/vodis.github.io/static/js/main.95284e18.chunk.js",
-  "main.js.map": "/vodis.github.io/static/js/main.95284e18.chunk.js.map",
-  "static/js/1.9781b06c.chunk.js": "/vodis.github.io/static/js/1.9781b06c.chunk.js",
-  "static/js/1.9781b06c.chunk.js.map": "/vodis.github.io/static/js/1.9781b06c.chunk.js.map",
-  "runtime~main.js": "/vodis.github.io/static/js/runtime~main.97ecdce2.js",
-  "runtime~main.js.map": "/vodis.github.io/static/js/runtime~main.97ecdce2.js.map",
-  "static/css/main.888fa1fa.chunk.css.map": "/vodis.github.io/static/css/main.888fa1fa.chunk.css.map",
-  "index.html": "/vodis.github.io/index.html",
-  "precache-manifest.691fad2b6363677a1a2eaeadbb2e0fa7.js": "/vodis.github.io/precache-manifest.691fad2b6363677a1a2eaeadbb2e0fa7.js",
-  "service-worker.js": "/vodis.github.io/service-worker.js"
+  "main.css": "/static/css/main.888fa1fa.chunk.css",
+  "main.js": "/static/js/main.2b195f03.chunk.js",
+  "main.js.map": "/static/js/main.2b195f03.chunk.js.map",
+  "static/js/1.9781b06c.chunk.js": "/static/js/1.9781b06c.chunk.js",
+  "static/js/1.9781b06c.chunk.js.map": "/static/js/1.9781b06c.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/css/main.888fa1fa.chunk.css.map": "/static/css/main.888fa1fa.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.40741933fe419d56ce2f1087fbfb83af.js": "/precache-manifest.40741933fe419d56ce2f1087fbfb83af.js",
+  "service-worker.js": "/service-worker.js"
 }
