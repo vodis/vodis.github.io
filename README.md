@@ -16,3 +16,7 @@ Ready to get started? Build your own site from scratch or generate one for your 
 DAIRY APP is SPA application, uses local storage for storing your thoughts and comments in your secret place.
 
 ![DAIRY APP, a SPA application](./app-cover.png)
+
+## Demo
+- Fire up a browser and go to - https://vodis.github.io
+- Feel free playing with application and adding new comments with descriptions and keep in mind secret keys `Ctrl+Enter` which pressing together add comment in the right section.
